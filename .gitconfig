@@ -56,3 +56,5 @@
 	ss = stash save	
 
 	k = !gitk
+[push]
+	default = simple

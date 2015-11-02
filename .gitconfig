@@ -39,8 +39,13 @@
 	r = remote
 	rv = remote -v	
 	p = pull
+	pr = pull --rebase
 	pom = push origin master
-    po = push origin
+    	po = push origin
+    	
+    	# Undo commit(s)
+        sr1 = reset --soft HEAD~1
+        hr1 = reset --hard HEAD~1
 
 	# Reset
 	r = reset

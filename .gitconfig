@@ -5,17 +5,17 @@
 [alias]
 	# Tag aliases
 	lasttag = describe --tags --abbrev=0
-	lt = describe --tags --abbrev=0	
+	lt = describe --tags --abbrev=0
 
 	# List aliases
 	la = "!git config -l | grep alias | cut -c 7-"
 
 	# Searching
-	f = "!git ls-files | grep -i"	
+	f = "!git ls-files | grep -i"
 	grep = grep -Ii
 	gr = grep -Ii
 
-	# Logs	
+	# Logs
 	l = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
@@ -25,27 +25,27 @@
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
 
-	# Basic Shortcuts	
+	# Basic Shortcuts
 	cp = cherry-pick
 	st = status -s
 	cl = clone
 	ci = commit
 	cim = commit -m
 	co = checkout
-	br = branch 
+	br = branch
 	bra = branch --all
 	diff = diff --word-diff
 	dc = diff --cached
 	r = remote
-	rv = remote -v	
+	rv = remote -v
 	p = pull
 	pr = pull --rebase
 	pom = push origin master
-    	po = push origin
-    	
-    	# Undo commit(s)
-        sr1 = reset --soft HEAD~1
-        hr1 = reset --hard HEAD~1
+  	po = push origin
+
+	# Undo commit(s)
+  	sr1 = reset --soft HEAD~1
+	hr1 = reset --hard HEAD~1
 
 	# Reset
 	r = reset
@@ -58,8 +58,16 @@
 	# Stach
 	sl = stash list
 	sa = stash apply
-	ss = stash save	
+	ss = stash save
 
 	k = !gitk
 [push]
 	default = simple
+[core]
+	excludesfile = /Users/avjpl/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

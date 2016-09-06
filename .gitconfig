@@ -59,6 +59,7 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+        sp = stash pop
 
 	k = !gitk
 [push]

@@ -41,6 +41,7 @@
 	p = pull
 	pr = pull --rebase
 	pom = push origin master
+	com = checkout master
   	po = push origin
 
 	# Undo commit(s)

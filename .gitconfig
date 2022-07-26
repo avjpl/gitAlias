@@ -35,6 +35,7 @@
 	cl = clone
 	ci = commit
 	cim = commit -m
+	cie = commit --allow-empty -m
 	co = checkout
 	br = branch
 	bra = branch --all

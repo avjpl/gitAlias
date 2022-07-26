@@ -1,6 +1,6 @@
 [user]
 	name = Adrian Lawrence
-	email = adrian.lawrence@razoroccam.com
+	email = avjpldeveloper@aol.com
 
 [alias]
 	# Tag aliases
@@ -25,6 +25,10 @@
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
 
+	# Remove branches
+	dlb = branch -d # local
+	drb = push origin --delete # remote
+
 	# Basic Shortcuts
 	cp = cherry-pick
 	st = status -s
@@ -40,13 +44,16 @@
 	rv = remote -v
 	p = pull
 	pr = pull --rebase
-	pom = push origin master
-	com = checkout master
+	pom = push origin main
+	com = checkout main
   	po = push origin
 
 	# Undo commit(s)
   	sr1 = reset --soft HEAD~1
 	hr1 = reset --hard HEAD~1
+
+	# merge
+	m = merge --no-ff main -m
 
 	# Reset
 	r = reset
@@ -60,7 +67,7 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-        sp = stash pop
+    sp = stash pop
 
 	k = !gitk
 [push]
@@ -73,3 +80,8 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
